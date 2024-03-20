@@ -6,8 +6,6 @@
     <header>
       <nav>
         <nuxt-link to="/">Home</nuxt-link>
-        <nuxt-link to="/club">Club</nuxt-link>
-        <nuxt-link to="/rameurs">Rameurs</nuxt-link>
       </nav>
     </header>
     <slot/>
@@ -29,7 +27,6 @@
     margin: 0 auto;
   }
   header {
-    position: fixed;
     top: 0;
     width: 100%;
     background-color: #f0f0f0;
