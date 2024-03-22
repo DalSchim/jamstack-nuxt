@@ -8,7 +8,7 @@
         <nuxt-link to="/">Home</nuxt-link>
       </nav>
     </header>
-    <slot/>
+    <slot />
     <footer>
       <p>&copy; 2021</p>
     </footer>

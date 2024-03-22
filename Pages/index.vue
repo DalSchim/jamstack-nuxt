@@ -54,8 +54,8 @@ function stopfilter(){
   </template>
   <template v-else>
     <select v-model="filter">
-      <option value=undefined v-on:click="stopfilter">Tous les rameurs</option>
-      <option v-for="club in club?.data" :key="club.slug" :value="club.slug">{{ club.name }}</option>
+      <option value=undefined v-on:click="filter.value= undefined">Tous les rameurs</option>
+      <option v-for="club in club?.data" :key="club.slug" v-on:click="filter.value= club.slug">{{ club.name }}</option>
     </select>
     <p>Bonjour</p>
     <div v-for="rameur in rameurs?.data" :key="rameur.slug">
