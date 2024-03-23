@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type {rameur, RameursResponse} from "~/models/rameur.model";
-import type {Meta} from "~/models/strapi.model";
 import type {club} from "~/models/club.model";
 
 const filter = ref()
