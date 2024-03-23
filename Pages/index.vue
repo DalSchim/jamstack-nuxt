@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {rameur, RameursResponse} from "~/models/rameur.model";
+/*import type {rameur, RameursResponse} from "~/models/rameur.model";
 import type {Meta} from "~/models/strapi.model";
 import type {club} from "~/models/club.model";
 
@@ -38,10 +38,12 @@ const {data:club,pending:clubpending}=useAsyncData('clubs', () => {
   return find<{data: club[]}>('clubs', {
     populate: '*'
   })
-})
+})*/
 </script>
+
+
 <template>
-  <input type="text" v-model="name" placeholder="Rechercher un rameur">
+  <input type="text" placeholder="Rechercher un rameur">
 
 </template>
 
