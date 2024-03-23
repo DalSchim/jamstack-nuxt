@@ -42,20 +42,7 @@ const {data:club,pending:clubpending}=useAsyncData('clubs', () => {
 </script>
 <template>
   <input type="text" v-model="name" placeholder="Rechercher un rameur">
-  <template v-if="RameurPending">
-    ça charge
-  </template>
-  <template v-else>
-    <select v-model="filter">
-      <option selected :value=undefined>Tous les rameurs</option>
-      <option v-for="club in club?.data" :key="club.slug" :value="club.slug">{{ club.name }}</option>
-    </select>
-    <p>Bonjour</p>
-    <div v-for="rameur in rameurs?.data" :key="rameur.slug">
-      <a :href="`/rameurs/${rameur.slug}`" :key="rameur.id">{{ rameur.name }}</a>
-    </div>
-    <button v-for="page in rameurs?.meta.pagination.pageCount" v-on:click="page=page">{{ page }}</button>
-  </template>
+
 </template>
 
 
