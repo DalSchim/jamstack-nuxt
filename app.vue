@@ -4,4 +4,5 @@
   </NuxtLayout>
 </template>
 <script setup lang="ts">
+console.log('bonjour')
 </script>
