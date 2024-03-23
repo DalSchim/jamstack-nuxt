@@ -10,7 +10,7 @@ let pageSize = ref(6)
 
 
 const {find} = useStrapi4()
-const {data: rameurs, pending:rameurPending} =  useAsyncData('rameurs',  () => {
+const {data: rameurs, pending:RameurPending} =  useAsyncData('rameurs',  () => {
   return  find<RameursResponse>('rameurs', {
     populate: '*',
     pagination:{
@@ -27,9 +27,7 @@ const {data: rameurs, pending:rameurPending} =  useAsyncData('rameurs',  () => {
     $eqi: filter.value || undefined
       }
     }
-
     }
-
   })
 }, {
   watch: [filter, name]
@@ -42,20 +40,16 @@ const {data:club,pending:clubpending}=useAsyncData('clubs', () => {
   })
 })
 
-function stopfilter(){
-  filter.value=undefined
-}
-
 </script>
 <template>
-  <input type="text" v-model="name " placeholder="Rechercher un rameur">
-  <template v-if="rameurPending">
+  <input type="text" v-model="name" placeholder="Rechercher un rameur">
+  <template v-if="RameurPending">
     ça charge
   </template>
   <template v-else>
     <select v-model="filter">
-      <option value=undefined v-on:click="filter.value= undefined">Tous les rameurs</option>
-      <option v-for="club in club?.data" :key="club.slug" v-on:click="filter.value= club.slug">{{ club.name }}</option>
+      <option selected :value=undefined >Tous les rameurs</option>
+      <option v-for="club in club?.data" :key="club.slug" :value="club.slug">{{ club.name }}</option>
     </select>
     <p>Bonjour</p>
     <div v-for="rameur in rameurs?.data" :key="rameur.slug">
