@@ -35,11 +35,10 @@ const {data: rameurs, pending:RameurPending} =  useAsyncData('rameurs',  () => {
 })
 //création de filtre
 const {data:club,pending:clubpending}=useAsyncData('clubs', () => {
-  return find<{ data: club[] }>('clubs', {
+  return find<{data: club[]}>('clubs', {
     populate: '*'
   })
 })
-
 </script>
 <template>
   <input type="text" v-model="name" placeholder="Rechercher un rameur">
@@ -48,7 +47,7 @@ const {data:club,pending:clubpending}=useAsyncData('clubs', () => {
   </template>
   <template v-else>
     <select v-model="filter">
-      <option selected :value=undefined >Tous les rameurs</option>
+      <option selected :value=undefined>Tous les rameurs</option>
       <option v-for="club in club?.data" :key="club.slug" :value="club.slug">{{ club.name }}</option>
     </select>
     <p>Bonjour</p>
