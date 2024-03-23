@@ -52,7 +52,7 @@ const {data:club,pending:clubpending}=useAsyncData('clubs', () => {
     </select>
     <p>Bonjour</p>
     <div v-for="rameur in rameurs?.data" :key="rameur.slug">
-      <a :href="`/rameurs/${rameur.slug}`" :key="rameur.id">{{ rameur.name }}</a>
+      <a :href="`/rameurs/${rameur.slug}`">{{ rameur.name }}</a>
     </div>
     <button v-for="page in rameurs?.meta.pagination.pageCount" v-on:click="page=page">{{ page }}</button>
   </template>
